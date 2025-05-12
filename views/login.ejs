@@ -1,0 +1,21 @@
+<%- include('templates/header', { title: "Login", name: null }) %>
+
+<h2 class="mb-4">Log In</h2>
+
+<% if (error) { %>
+  <div class="alert alert-danger"><%= error %></div>
+<% } %>
+
+<form method="POST" action="/loginSubmit">
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" name="email" id="email" value="<%= preservedEmail %>" required>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="password" required>
+  </div>
+  <button type="submit" class="btn btn-success">Login</button>
+</form>
+
+<%- include('templates/footer') %>

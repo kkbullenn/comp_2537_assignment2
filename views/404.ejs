@@ -1,0 +1,9 @@
+<%- include('templates/header', { title: title || "Not Found", name: name }) %>
+
+<div class="text-center mt-5">
+  <h1 class="display-4 text-danger"><%= title %></h1>
+  <p class="lead mt-3"><%= message || "The page you're looking for doesn't exist." %></p>
+  <a href="/" class="btn btn-primary mt-3">Return Home</a>
+</div>
+
+<%- include('templates/footer') %>
