@@ -174,8 +174,13 @@ app.get('/logout', (req, res) => {
 });
 
 app.use((req, res) => {
-  res.status(404).render('404', { title: "Not Found" });
+  res.status(404).render('404', {
+    title: "404 Not Found",
+    name: req.session.user?.name || null,
+    message: null
+  });
 });
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
